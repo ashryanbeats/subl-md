@@ -8,8 +8,7 @@ do
 	ARG="$1"
 
 	case $ARG in
-		-d)
-			# dependency checking
+		-d) # dependency checking
 			echo "Checking for Sublime Text CLI..."
 			command -v subl >/dev/null 2>&1 # check for subl CLI
 			if [ $? -eq 0 ]
@@ -36,10 +35,12 @@ do
 
 			shift
 			;;
-		*)
+
+		*) # file name, if any
 			FILE=$ARG$EXTENSION
 			shift		
 			;;
+
 	esac
 done
 
